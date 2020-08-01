@@ -11,16 +11,24 @@
   >
     <b-carousel-slide
       caption="First slide"
-      img-src="../../assets/bg.jpg"
+      img-src="../../assets/accueil.jpeg"
     ></b-carousel-slide>
+
     <b-carousel-slide
       caption="Second Slide"
-      img-src="https://picsum.photos/1024/480/?image=12"
+      img-src="../../assets/img5.jpeg"
     ></b-carousel-slide>
+    
     <b-carousel-slide
       caption="Third Slide"
-      img-src="https://picsum.photos/1024/480/?image=22"
+      img-src="../../assets/img7.jpg"
     ></b-carousel-slide>
+
+    <b-carousel-slide
+      caption="Fourth Slide"
+      img-src="../../assets/img8.jpg"
+    ></b-carousel-slide>
+
   </b-carousel>
 </div>
 
@@ -35,12 +43,15 @@ export default {
 
 <style lang="scss" scoped>
 
-$sizeCarousel: 80%;
+$sizeCarousel: 70%;
 
 #container{
     width: $sizeCarousel;
-    height: 600px;
+    height: 50%;
     overflow: auto;
+    margin: 20px 0px;
+    border: outset grey 0.5rem;
+    border-radius: 15px;
 }
 
 </style> 

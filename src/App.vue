@@ -5,7 +5,7 @@
 
     <banner></banner>
 
-    <b-button class="btn-outline-primary m-2" size='md' v-on:click="access">Entrer</b-button>
+    <b-button class="btn-outline-light m-2" size='md' v-on:click="access">Entrer</b-button>
     <input type="text" placeholder="Enter Password" v-if="token" >
     
     <card></card>

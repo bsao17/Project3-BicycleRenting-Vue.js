@@ -1,18 +1,18 @@
 <template>
 
 <div id="container">
+  <a href="https://devwebdino.com">
   <b-card id="imgJcd"
     overlay
-    img-src="https://www.lerevenu.com/sites/site/files/styles/img_lg/public/field/image/jcdecaux-carte-l-grassin_0.jpg?itok=h4QXO9s_"
+    img-src="../../assets/bannerDwd.jpeg"
     img-alt="Card Image"
     text-variant="white"
-    title="Concept application by devwebdino.com"
   >
   
-    <b-card-text>
+    <!-- <b-card-text>
       <a href="mailto:contact@devwebdino.com"> m@il: {{mail}} </a>
-    </b-card-text>
-  </b-card>
+    </b-card-text> -->
+  </b-card></a>
 
 </div>
 
@@ -39,7 +39,7 @@ export default {
 #container{
   background-color: cadetblue;
   width: 30%;
-  height: 150px;
+  height: auto;
   box-sizing: border-box;
   overflow: auto;
   margin: 15px;
