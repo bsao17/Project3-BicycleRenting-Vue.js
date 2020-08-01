@@ -1,17 +1,19 @@
 <template>
   <div id="container">
     
-      <h1 class="card"> {{title}} </h1>
+      <h1 class="card card-outlet-light"> {{title}} <span v-for="msg of msgs" :key="msg.id"> {{msg}} </span> </h1>
+      
       
 
   </div>
 </template>
 
-<script>
+<script> 
 export default {
   data(){
     return{
-      title:' welcome in devwebdino.com'
+      title: 'JCDecaux',
+      msgs: [' - Location de vélo - ', ' Bike renting ']
     }
   }
 
@@ -19,15 +21,19 @@ export default {
 </script>
 
 <style scoped lang=scss>
-#container{
+$blueColor: black;
+h1{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 80vw;
-  height: 80vh;
-  margin: auto;
-  border: solid black 1px;
-  
+  color: $blueColor;
+  font-weight: bold;
+  height: 10vh;
+}
+ul{
+  list-style: none;
+  text-align: center;
 }
 
 </style>

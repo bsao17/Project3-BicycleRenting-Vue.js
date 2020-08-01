@@ -1,41 +1,65 @@
 <template>
   <div id="app">
-    <h1 id="titleApp">hello</h1>
-    <alert-box class="card bg-danger text-light">attention</alert-box>
+
+    <carousel></carousel>
+
     <banner></banner>
+
+    <b-button class="btn-outline-primary m-2" size='md' v-on:click="access">Entrer</b-button>
+    <input type="text" placeholder="Enter Password" v-if="token" >
+    
+    <card></card>
+    
     
   </div>
+
+  
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import banner from './components/banner/banner.vue'
+import card from './components/car/card.vue'
+import carousel from './components/carousel/carousel.vue'
 
 export default {
   name: 'App',
+  data() {
+    return{
+      token: false
+    }
+  },
+  methods:{
+      access: function(){
+        this.token=true
+         event.stopPropagation()
+        console.log(this.token)
+      },
+      foo: function(){
+       
+        console.log("j'ai cliqué")
+        
+      }
+  },
   components: {
-    banner
-   
+    banner,
+    card ,
+    carousel 
+  
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-#titleApp{
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: red;
-  border: solid red 1px;
-  background-color: rgba(252, 61, 61, 1);
-  width: 90vw;
-  height: 100vh;
-  position: absolute;
-  top: 0%;
-  left: 4.5%;
-  
+  justify-content: center;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  background-color: rgb(82, 82, 82);
+  color: white;
 }
 </style>
