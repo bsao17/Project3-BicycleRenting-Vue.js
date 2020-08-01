@@ -1,4 +1,4 @@
-# todo2
+# Project Bycicle renting with Vue.js framework
 
 ## Project setup
 ```
