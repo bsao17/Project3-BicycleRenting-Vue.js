@@ -5,15 +5,21 @@
 
     <banner></banner>
 
+    <div id="lign"></div>
+
+    <section id="containerMap">
+
+
+    </section>
+
     <b-button class="btn-outline-light m-2" size='md' v-on:click="access">Entrer</b-button>
-    <input type="text" placeholder="Enter Password" v-if="token" >
+    <input type="text" placeholder="Enter First Name" v-if="token" >
+    <input type="text" placeholder="Enter Last Name" v-if="token" >
     
     <card></card>
     
     
   </div>
-
-  
 </template>
 
 <script>
@@ -59,7 +65,20 @@ export default {
   align-items: center;
   justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  background-color: rgb(82, 82, 82);
+  background-color: rgb(56, 56, 56);
   color: white;
+}
+#lign{
+  width: 100%;
+  height: 4px;
+  background-color: black;
+}
+#containerMap{
+  width: 90% ;
+  height: 800px;
+  border: outset rgb(168, 168, 168) 0.5rem;
+  border-radius: 15px;
+  margin: 20px;
+  background-color: gray;
 }
 </style>

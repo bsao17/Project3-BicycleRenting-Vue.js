@@ -9,9 +9,6 @@
     text-variant="white"
   >
   
-    <!-- <b-card-text>
-      <a href="mailto:contact@devwebdino.com"> m@il: {{mail}} </a>
-    </b-card-text> -->
   </b-card></a>
 
 </div>
