@@ -19,6 +19,12 @@
 
         </section>
 
+        <div id="map">
+            
+            <leaflet></leaflet>
+            
+        </div>
+
         <div id="choiceResults"> {{results}} </div>
 
 
@@ -26,12 +32,15 @@
 </template>
 
 <script>
+
+import leaflet from './leaflet.vue'
+
 export default {
     data(){
         return{
             results: [],
             cityChoice: '',
-            index: 0
+            index: 0,
         }
     },
     methods:{
@@ -43,11 +52,14 @@ export default {
             .then(result => result.json())
             .then(response=>{
                 for(let i of response){
-                    this.results.push(i.address + "/" + i.available_bikes)
-                    console.log(this.results)
+                    this.results.push(i.address + " / " + i.available_bikes + " ")
+                    console.log(response)
                 }
             });
         }
+    },
+    components:{
+       leaflet
     }
 
 }
@@ -55,5 +67,6 @@ export default {
 
 <style scoped lang="scss">
 
+   
 </style>
 
