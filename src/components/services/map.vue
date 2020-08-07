@@ -1,16 +1,25 @@
 <template>
-    <div>
-        <button @click="requestAjax">request</button>
-        <button @click="chooseCity">city choice</button>
-        <select name="city" id="city">
-            <option value="toulouse">Toulouse</option>
-            <option value="lyon">Lyon</option>
-            <option value="marseille">Marseille</option>
-            <option value="nancy">Nancy</option>
-            <option value="bruxelles">Bruxelles</option>
-        </select>
+    <div id="container">
+        <section class="container">
 
-        <div> {{results}} </div>
+            <select class="card card-primary" name="city" id="city">
+                <option value="toulouse">Toulouse</option>
+                <option value="lyon">Lyon</option>
+                <option value="marseille">Marseille</option>
+                <option value="nancy">Nancy</option>
+                <option value="bruxelles">Bruxelles</option>
+                <option value="luxembourg">Luxembourg</option>
+                <option value="brisbane">Brisbane</option>
+                <option value="creteil">Créteil</option>
+                <option value="cergy-pontoise">Cergy-Pontoise</option>
+                <option value="amiens">Amiens</option>
+            </select>
+
+            <button class="btn btn-primary text-light" id="buttonChoice" @click="requestAjax">request</button>
+
+        </section>
+
+        <div id="choiceResults"> {{results}} </div>
 
 
     </div>
@@ -21,13 +30,7 @@ export default {
     data(){
         return{
             results: '',
-            cityChoice: '',
-            toulouse: 'toulouse',
-            bruxelles: 'bruxelles',
-            nancy: 'nancy',
-            marseille: 'marseille',
-            lyon: 'lyon',
-            luxembourg: 'luxembourg'
+            cityChoice: ''
         }
     },
     methods:{
@@ -39,6 +42,9 @@ export default {
             .then(result => result.json())
             .then(response=>{
                 this.results = response
+                for(let i of this.results){
+                    console.log(i.address)
+                }
             });
         }
     }
@@ -47,6 +53,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    
+
 </style>
 
