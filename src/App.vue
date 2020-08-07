@@ -1,22 +1,33 @@
 <template>
   <div id="app">
 
+    <div class="lign"></div>
+    
     <carousel></carousel>
+
+    <div class="lign"></div>
 
     <banner></banner>
 
-    <div id="lign"></div>
+    <div class="lign"></div>
 
     <section id="containerMap">
 
+      <maped></maped>
 
     </section>
 
-    <b-button class="btn-outline-light m-2" size='md' v-on:click="access">Entrer</b-button>
-    <input type="text" placeholder="Enter First Name" v-if="token" >
-    <input type="text" placeholder="Enter Last Name" v-if="token" >
+    <div class="lign"></div>
+
+    <b-button class="btn-outline-light m-2" size='md' v-on:click="access">Reservation</b-button>
     
+    
+    <formular v-if="token"></formular>
+
+    <div class="lign"></div>
+
     <card></card>
+    
     
     
   </div>
@@ -27,6 +38,8 @@
 import banner from './components/banner/banner.vue'
 import card from './components/car/card.vue'
 import carousel from './components/carousel/carousel.vue'
+import formular from './components/formular/formular.vue'
+import maped from './components/services/map.vue'
 
 export default {
   name: 'App',
@@ -50,7 +63,9 @@ export default {
   components: {
     banner,
     card ,
-    carousel 
+    carousel,
+    formular,
+    maped 
   
   }
 }
@@ -68,7 +83,7 @@ export default {
   background-color: rgb(56, 56, 56);
   color: white;
 }
-#lign{
+.lign{
   width: 100%;
   height: 4px;
   background-color: black;
@@ -80,5 +95,6 @@ export default {
   border-radius: 15px;
   margin: 20px;
   background-color: gray;
+  overflow: auto;
 }
 </style>

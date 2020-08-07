@@ -30,7 +30,7 @@ h1{
   color: $blueColor;
   font-weight: bold;
   height: 10vh;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 
