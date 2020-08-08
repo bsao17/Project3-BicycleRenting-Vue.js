@@ -10,46 +10,43 @@
         :url="url"
         :attribution="attribution"
       />
-      <l-control class="example-custom-control">
-        <p @click="showAlert">
-          Click me
-        </p>
-      </l-control>
-      <l-control
-        :position="'bottomleft'"
-        class="custom-control-watermark"
-      >
-        Vue2Leaflet Watermark Control
-      </l-control>
+      
     </l-map>
+
+
+<!--ma props latitude longitude -->
+
+    <p>Position des villes : {{lgt}} </p>
+
+
   </div>
 </template>
 
 <script>
 import { latLng } from "leaflet";
-import { LMap, LTileLayer, LControl } from "vue2-leaflet";
+import { LMap, LTileLayer,  } from "vue2-leaflet";
 
 export default {
-  name: "Example",
+  name: "bikeRenting",
   components: {
     LMap,
     LTileLayer,
-    LControl
+    // LMarker
   },
   data() {
     return {
-      zoom: 13,
-      center: latLng(47.41322, -1.219482),
+      zoom: 12,
+      center: latLng(43.6043, 1.4437),
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     };
   },
   methods: {
     showAlert() {
       alert("Click!");
     }
-  }
+  },
+  props:['lgt', 'cityChoice']
 };
 </script>
 

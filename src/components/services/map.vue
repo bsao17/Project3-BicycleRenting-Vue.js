@@ -2,7 +2,7 @@
     <div id="container">
         <section class="container">
 
-            <select class="card card-primary" name="city" id="city">
+            <select class="card card-outline-primary" name="city" id="city">
                 <option value="toulouse">Toulouse</option>
                 <option value="lyon">Lyon</option>
                 <option value="marseille">Marseille</option>
@@ -21,49 +21,57 @@
 
         <div id="map">
             
-            <leaflet></leaflet>
+           
             
         </div>
+        
 
-        <div id="choiceResults"> {{results}} </div>
+           
+
 
 
     </div>
 </template>
 
+
+
+
+
 <script>
 
-import leaflet from './leaflet.vue'
+
 
 export default {
     data(){
         return{
+            city: null,
             results: [],
-            cityChoice: '',
-            index: 0,
+            index: 0
+            
         }
     },
     methods:{
         requestAjax:function(){
-            let cityData = document.getElementById('city');
-            this.cityChoice = cityData.value;
-            console.log(cityData.value);
-            fetch(`https://api.jcdecaux.com/vls/v1/stations?contract=${this.cityChoice}&apiKey=e56f43cd9e4a4aa5260f59360a683fa28aaa4e6b`)
+            const cityData = document.getElementById('city').value;
+            this.city = cityData
+            console.log(this.city, this.results);
+            fetch(`https://api.jcdecaux.com/vls/v1/stations?contract=${cityData}&apiKey=e56f43cd9e4a4aa5260f59360a683fa28aaa4e6b`)
             .then(result => result.json())
             .then(response=>{
                 for(let i of response){
-                    this.results.push(i.address + " / " + i.available_bikes + " ")
-                    console.log(response)
+                    this.results.push(i.position)
                 }
             });
         }
     },
     components:{
-       leaflet
+       
     }
-
 }
 </script>
+
+
+
 
 <style scoped lang="scss">
 
