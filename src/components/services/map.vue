@@ -33,12 +33,10 @@
                     :url="url"
                     :attribution="attribution"
                 />
+                <l-marker :lat-lng="markerLatLng" ></l-marker>
                 
                 </l-map>
 
-                <l-marker
-                :marker=markerMap
-                ></l-marker>
 
             </div>
                     
@@ -58,7 +56,7 @@
 
 <script>
 
-import { latLng } from "leaflet";
+// import { latLng } from "leaflet";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 
 export default {
@@ -68,12 +66,12 @@ export default {
             results: [],
             index: 0,
             zoom: 12,
-            center: latLng(43.6043, 1.4437),
+            center: [43.6043, 1.4437],
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+            markerLatLng: [43.6043, 1.4437],
             markerLat: [],
-            markerLng: [],
-            markerMap: latLng(this.results)
+            markerLng: []
         }
     },
     methods:{

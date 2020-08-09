@@ -14,6 +14,7 @@
     <section id="containerMap">
 
         <maped></maped>
+        
 
     </section>
 
@@ -34,7 +35,17 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import { Icon } from 'leaflet';
+
+delete Icon.Default.prototype._getIconUrl;
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
+
+
+
 import banner from './components/banner/banner.vue'
 import card from './components/car/card.vue'
 import carousel from './components/carousel/carousel.vue'
@@ -65,7 +76,7 @@ export default {
     card ,
     carousel,
     formular,
-    maped 
+    maped
   
   }
 }
