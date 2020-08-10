@@ -33,7 +33,7 @@
                 <l-marker
                 v-for="marker of markers"
                 :lat-lng="marker"
-                :key="marker"
+                :key="marker.position"
 
                 ></l-marker>
                 
